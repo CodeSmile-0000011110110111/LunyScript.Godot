@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://drau1ywmtrylk"]
+
+[ext_resource type="Script" uid="uid://btxvjwylt2hqk" path="res://addons/lunyscript/LunyScript.Godot/Tests/TestController.cs" id="1_0nry7"]
+
+[node name="ObjectLifecycleTests" type="Node3D"]
+
+[node name="TestController" type="Node" parent="."]
+script = ExtResource("1_0nry7")
+
+[node name="Assert_Runs_WhenCreated" type="Node" parent="."]
+
+[node name="Assert_Runs_WhenDestroyed" type="Node" parent="."]
+
+[node name="Assert_Runs_WhenEnabled" type="Node" parent="."]
+
+[node name="Assert_Runs_WhenDisabled" type="Node" parent="."]
+
+[node name="Assert_Runs_WhenReady" type="Node" parent="."]
+
+[node name="Assert_Runs_EveryFixedStep" type="Node" parent="."]
+
+[node name="Assert_Runs_EveryFrame" type="Node" parent="."]
+
+[node name="Assert_Runs_EveryFrameEnds" type="Node" parent="."]
