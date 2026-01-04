@@ -1,5 +1,5 @@
 using Godot;
-using Luny.Diagnostics;
+using Luny;
 using LunyScript.Tests;
 using System;
 
