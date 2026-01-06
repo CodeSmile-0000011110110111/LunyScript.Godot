@@ -18,13 +18,18 @@ namespace LunyScript.Godot.Tests
 
 		public TestController()
 		{
-			LunyLogger.LogInfo($"{nameof(TestController)}()", this);
+			LunyLogger.LogInfo($"{nameof(TestController)}() ctor", this);
 			LunyScriptEngine.Instance.GlobalVariables.OnVariableChanged += OnVariableChanged;
 		}
 
-		private void OnVariableChanged(Object sender, VariableChangedEventArgs changedVar)
+		public override void _Ready()
 		{
-			LunyLogger.LogInfo(changedVar.ToString(), this);
+			LunyLogger.LogInfo($"{nameof(TestController)}() _Ready", this);
+		}
+
+		private void OnVariableChanged(Object sender, LunyScriptVariableChangedArgs changedVar)
+		{
+			LunyLogger.LogInfo($"{changedVar}", this);
 
 			var pass = changedVar.Variable.Boolean();
 			if (changedVar.Name == nameof(Assert_Runs_WhenCreated))
