@@ -22,10 +22,7 @@ namespace LunyScript.Godot.Tests
 			LunyScriptEngine.Instance.GlobalVariables.OnVariableChanged += OnVariableChanged;
 		}
 
-		public override void _Ready()
-		{
-			LunyLogger.LogInfo($"{nameof(TestController)}() _Ready", this);
-		}
+		public override void _Ready() => LunyLogger.LogInfo($"{nameof(TestController)}() _Ready", this);
 
 		private void OnVariableChanged(Object sender, LunyScriptVariableChangedArgs changedVar)
 		{
