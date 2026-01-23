@@ -5,7 +5,7 @@ using System;
 
 namespace LunyScript.Godot.Tests
 {
-	public partial class TestController : Node
+	public partial class LifecycleTestController : Node
 	{
 		[Export] public Boolean Assert_Runs_WhenCreated_Passed;
 		[Export] public Boolean Assert_Runs_WhenDestroyed_Passed;
@@ -16,13 +16,13 @@ namespace LunyScript.Godot.Tests
 		[Export] public Boolean Assert_Runs_EveryFrame_Passed;
 		[Export] public Boolean Assert_Runs_EveryFrameEnds_Passed;
 
-		public TestController()
+		public LifecycleTestController()
 		{
-			LunyLogger.LogInfo($"{nameof(TestController)}() ctor", this);
+			LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() ctor", this);
 			LunyScriptEngine.Instance.GlobalVariables.OnVariableChanged += OnVariableChanged;
 		}
 
-		public override void _Ready() => LunyLogger.LogInfo($"{nameof(TestController)}() _Ready", this);
+		public override void _Ready() => LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() _Ready", this);
 
 		private void OnVariableChanged(Object sender, LunyScriptVariableChangedArgs changedVar)
 		{

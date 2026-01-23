@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://drau1ywmtrylk"]
+[gd_scene load_steps=2 format=3 uid="uid://cgemyu16hj76y"]
 
-[ext_resource type="Script" uid="uid://btxvjwylt2hqk" path="res://addons/lunyscript/LunyScript.Godot/Tests/TestController.cs" id="1_0nry7"]
+[ext_resource type="Script" uid="uid://cov7tbp8k7p4x" path="res://addons/lunyscript/LunyScript.Godot/SmokeTests/LifecycleTestController.cs" id="1_6fc7p"]
 
-[node name="ObjectLifecycleTests" type="Node3D"]
+[node name="LifecycleTests" type="Node3D"]
 
 [node name="TestController" type="Node" parent="."]
-script = ExtResource("1_0nry7")
+script = ExtResource("1_6fc7p")
 
 [node name="Assert_Runs_WhenCreated" type="Node" parent="."]
 
