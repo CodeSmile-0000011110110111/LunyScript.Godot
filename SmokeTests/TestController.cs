@@ -1,6 +1,6 @@
 using Godot;
 using Luny;
-using LunyScript.Tests;
+using LunyScript.SmokeTests;
 using System;
 
 namespace LunyScript.Godot.Tests
