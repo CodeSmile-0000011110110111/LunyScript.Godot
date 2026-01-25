@@ -19,7 +19,7 @@ namespace LunyScript.Godot.Tests
 		public LifecycleTestController()
 		{
 			LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() ctor", this);
-			LunyScriptEngine.Instance.GlobalVariables.OnVariableChanged += OnVariableChanged;
+			LunyScriptEngine.Instance.GlobalVars.OnVariableChanged += OnVariableChanged;
 		}
 
 		public override void _Ready() => LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() _Ready", this);
@@ -28,7 +28,7 @@ namespace LunyScript.Godot.Tests
 		{
 			LunyLogger.LogInfo($"{changedVar}", this);
 
-			var pass = changedVar.Variable.Boolean();
+			var pass = changedVar.Variable.AsBoolean();
 			if (changedVar.Name == nameof(Assert_Runs_WhenCreated))
 				Assert_Runs_WhenCreated_Passed = pass;
 			else if (changedVar.Name == nameof(Assert_Runs_WhenDestroyed))
