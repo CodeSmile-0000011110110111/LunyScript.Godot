@@ -3,7 +3,7 @@ using Luny;
 using LunyScript.SmokeTests;
 using System;
 
-namespace LunyScript.Godot.Tests
+namespace LunyScript.Godot.SmokeTests
 {
 	public partial class LifecycleTestController : Node
 	{

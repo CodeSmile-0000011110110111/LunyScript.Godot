@@ -1,8 +1,8 @@
 ﻿using Godot;
-using LunyScript.Unity.SmokeTests;
+using LunyScript.SmokeTests;
 using System;
 
-namespace LunyScript.Godot.Tests
+namespace LunyScript.Godot.SmokeTests
 {
 	public partial class ObjectTestController : Node
 	{
