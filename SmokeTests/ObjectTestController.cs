@@ -4,7 +4,7 @@ using System;
 
 namespace LunyScript.Godot.SmokeTests
 {
-	public partial class ObjectTestController : Node
+	public class ObjectTestController : Node
 	{
 		[Export] private Boolean _ObjectCreatedAndDestroyed;
 		[Export] private Boolean _EmptyObjectCreated;
@@ -15,7 +15,7 @@ namespace LunyScript.Godot.SmokeTests
 
 		private Int32 processCount;
 
-		private static SceneTree SceneTree => (SceneTree)Engine.GetMainLoop();
+		private static SceneTree SceneTree => Engine.GetMainLoop();
 
 		public override void _Ready()
 		{

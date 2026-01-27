@@ -5,7 +5,7 @@ using System;
 
 namespace LunyScript.Godot.SmokeTests
 {
-	public partial class LifecycleTestController : Node
+	public class LifecycleTestController : Node
 	{
 		[Export] public Boolean Assert_Runs_WhenCreated_Passed;
 		[Export] public Boolean Assert_Runs_WhenDestroyed_Passed;
