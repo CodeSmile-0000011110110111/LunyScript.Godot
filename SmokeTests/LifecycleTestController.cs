@@ -28,11 +28,11 @@ namespace LunyScript.Godot.SmokeTests
 
 		public override void _Ready() => LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() _Ready", this);
 
-		private void OnVariableChanged(Object sender, LunyScriptVariableChangedArgs changedVar)
+		private void OnVariableChanged(Object sender, VariableChangedArgs changedVar)
 		{
 			LunyLogger.LogInfo($"{changedVar}", this);
 
-			var pass = changedVar.Variable.AsBoolean();
+			var pass = changedVar.Current.AsBoolean();
 			if (changedVar.Name == nameof(Assert_Runs_WhenCreated))
 				Assert_Runs_WhenCreated_Passed = pass;
 			else if (changedVar.Name == nameof(Assert_Runs_WhenDestroyed))
