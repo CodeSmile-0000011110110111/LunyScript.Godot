@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://yn1wdblmoj6a"]
+
+[ext_resource type="PackedScene" uid="uid://dkv5hgox40jdw" path="res://addons/lunyscript/LunyScript.Godot/SmokeTests/floor.tscn" id="1_1vcml"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f80td"]
+sky_top_color = Color(0.4112052, 0.37769762, 0.80122834, 1)
+sky_horizon_color = Color(0.91538656, 0.48975033, 0.72698486, 1)
+
+[sub_resource type="Sky" id="Sky_nx3wj"]
+sky_material = SubResource("ProceduralSkyMaterial_f80td")
+
+[sub_resource type="Environment" id="Environment_1vcml"]
+background_mode = 2
+sky = SubResource("Sky_nx3wj")
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.5183173, 0.5615211, 0.5492124, 1)
+fog_density = 0.003
+fog_aerial_perspective = 0.85
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pqisp"]
+auto_exposure_enabled = true
+
+[node name="PrefabTests" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.90630776, -0.12144381, 0.4047933, 0, 0.9578225, 0.28736052, -0.42261827, -0.26043707, 0.868082, 1.2273088, 0.9257951, 2.5587375)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0.38912398, 0.9211854, 0, 0.92118543, -0.38912398, -1, -1.700915e-08, -4.026629e-08, 0, 25, 0)
+light_color = Color(1, 0.8392157, 0.7019608, 1)
+light_energy = 0.816
+light_volumetric_fog_energy = 0.611
+shadow_enabled = true
+shadow_transmittance_bias = 5.338
+shadow_blur = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1vcml")
+camera_attributes = SubResource("CameraAttributesPhysical_pqisp")
+
+[node name="Floor" parent="." instance=ExtResource("1_1vcml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7928424, 0)
+
+[node name="CreateBallScript" type="Node" parent="."]
