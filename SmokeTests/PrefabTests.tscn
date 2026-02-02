@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://yn1wdblmoj6a"]
+[gd_scene format=3 uid="uid://yn1wdblmoj6a"]
 
 [ext_resource type="PackedScene" uid="uid://dkv5hgox40jdw" path="res://addons/lunyscript/LunyScript.Godot/SmokeTests/floor.tscn" id="1_1vcml"]
 
@@ -24,12 +24,12 @@ volumetric_fog_density = 0.025
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pqisp"]
 auto_exposure_enabled = true
 
-[node name="PrefabTests" type="Node3D"]
+[node name="PrefabTests" type="Node3D" unique_id=1022822848]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=177765990]
 transform = Transform3D(0.90630776, -0.12144381, 0.4047933, 0, 0.9578225, 0.28736052, -0.42261827, -0.26043707, 0.868082, 1.2273088, 0.9257951, 2.5587375)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1973194753]
 transform = Transform3D(-4.371139e-08, 0.38912398, 0.9211854, 0, 0.92118543, -0.38912398, -1, -1.700915e-08, -4.026629e-08, 0, 25, 0)
 light_color = Color(1, 0.8392157, 0.7019608, 1)
 light_energy = 0.816
@@ -38,11 +38,11 @@ shadow_enabled = true
 shadow_transmittance_bias = 5.338
 shadow_blur = 0.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=554246498]
 environment = SubResource("Environment_1vcml")
 camera_attributes = SubResource("CameraAttributesPhysical_pqisp")
 
-[node name="Floor" parent="." instance=ExtResource("1_1vcml")]
+[node name="Floor" parent="." unique_id=235531583 instance=ExtResource("1_1vcml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7928424, 0)
 
-[node name="CreateBallScript" type="Node" parent="."]
+[node name="CreateBallScript" type="Node" parent="." unique_id=1781198303]
