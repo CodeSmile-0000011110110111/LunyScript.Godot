@@ -2,9 +2,6 @@
 {
 	public sealed class CreateBallScript : LunyScript
 	{
-		public override void Build()
-		{
-			When.Self.Ready(Prefab.Instantiate("ball"));
-		}
+		public override void Build() => When.Self.Ready(Prefab.Instantiate("ball"));
 	}
 }
