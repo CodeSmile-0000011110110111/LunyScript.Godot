@@ -1,7 +1,7 @@
-﻿namespace LunyScript.Godot.SmokeTests
+namespace LunyScript.Godot.SmokeTests
 {
 	public sealed class CreateBallScript : LunyScript
 	{
-		public override void Build() => When.Self.Ready(Prefab.Instantiate("ball"));
+		public override void Build() => On.Ready(Prefab.Instantiate("ball"));
 	}
 }
