@@ -27,7 +27,7 @@ namespace LunyScript.Godot.SmokeTests
 			SceneTree.CurrentScene.CallDeferred("add_child", node);
 		}
 
-		public override void _Process(Double delta)
+		public override void _Process(Double deltaTime)
 		{
 			if (!_foundToBeDestroyedNode)
 			{
