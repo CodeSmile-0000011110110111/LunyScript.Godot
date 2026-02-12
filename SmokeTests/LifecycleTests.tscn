@@ -1,24 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgemyu16hj76y"]
+[gd_scene format=3 uid="uid://cgemyu16hj76y"]
 
 [ext_resource type="Script" uid="uid://cov7tbp8k7p4x" path="res://addons/lunyscript/LunyScript.Godot/SmokeTests/LifecycleTestController.cs" id="1_6fc7p"]
 
-[node name="LifecycleTests" type="Node3D"]
+[node name="LifecycleTests" type="Node3D" unique_id=67543173]
 
-[node name="TestController" type="Node" parent="."]
+[node name="TestController" type="Node" parent="." unique_id=1452725001]
 script = ExtResource("1_6fc7p")
 
-[node name="Assert_Runs_WhenCreated" type="Node" parent="."]
+[node name="Assert_Runs_OnCreated" type="Node" parent="." unique_id=197337223]
 
-[node name="Assert_Runs_WhenDestroyed" type="Node" parent="."]
+[node name="Assert_Runs_OnDestroyed" type="Node" parent="." unique_id=736450071]
 
-[node name="Assert_Runs_WhenEnabled" type="Node" parent="."]
+[node name="Assert_Runs_OnEnabled" type="Node" parent="." unique_id=1951841106]
 
-[node name="Assert_Runs_WhenDisabled" type="Node" parent="."]
+[node name="Assert_Runs_OnDisabled" type="Node" parent="." unique_id=559587642]
 
-[node name="Assert_Runs_WhenReady" type="Node" parent="."]
+[node name="Assert_Runs_OnReady" type="Node" parent="." unique_id=593835793]
 
-[node name="Assert_Runs_EveryFixedStep" type="Node" parent="."]
+[node name="Assert_Runs_OnHeartbeat" type="Node" parent="." unique_id=59524041]
 
-[node name="Assert_Runs_EveryFrame" type="Node" parent="."]
+[node name="Assert_Runs_OnFrameUpdate" type="Node" parent="." unique_id=1544418940]
 
-[node name="Assert_Runs_EveryFrameEnds" type="Node" parent="."]
+[node name="Assert_Runs_OnFrameLateUpdate" type="Node" parent="." unique_id=1181319169]

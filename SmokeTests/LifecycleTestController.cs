@@ -11,14 +11,14 @@ namespace LunyScript.Godot.SmokeTests
 	public class LifecycleTestController : Node
 #endif
 	{
-		[Export] public Boolean Assert_Runs_WhenCreated_Passed;
-		[Export] public Boolean Assert_Runs_WhenDestroyed_Passed;
-		[Export] public Boolean Assert_Runs_WhenEnabled_Passed;
-		[Export] public Boolean Assert_Runs_WhenDisabled_Passed;
-		[Export] public Boolean Assert_Runs_WhenReady_Passed;
-		[Export] public Boolean Assert_Runs_EveryFixedStep_Passed;
-		[Export] public Boolean Assert_Runs_EveryFrame_Passed;
-		[Export] public Boolean Assert_Runs_EveryFrameEnds_Passed;
+		[Export] public Boolean Assert_Runs_OnCreated_Passed;
+		[Export] public Boolean Assert_Runs_OnDestroyed_Passed;
+		[Export] public Boolean Assert_Runs_OnEnabled_Passed;
+		[Export] public Boolean Assert_Runs_OnDisabled_Passed;
+		[Export] public Boolean Assert_Runs_OnReady_Passed;
+		[Export] public Boolean Assert_Runs_OnHeartbeat_Passed;
+		[Export] public Boolean Assert_Runs_OnFrameUpdate_Passed;
+		[Export] public Boolean Assert_Runs_OnFrameLateUpdate_Passed;
 
 		public LifecycleTestController()
 		{
@@ -30,27 +30,30 @@ namespace LunyScript.Godot.SmokeTests
 
 		private void OnVariableChanged(Object sender, VariableChangedArgs changedVar)
 		{
+			if (changedVar.Name.StartsWith("Time."))
+				return;
+
 			LunyLogger.LogInfo($"{changedVar}", this);
 
 			var pass = changedVar.Current.AsBoolean();
-			if (changedVar.Name == nameof(Assert_Runs_WhenCreated))
-				Assert_Runs_WhenCreated_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_WhenDestroyed))
-				Assert_Runs_WhenDestroyed_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_WhenEnabled))
-				Assert_Runs_WhenEnabled_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_WhenDisabled))
-				Assert_Runs_WhenDisabled_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_WhenReady))
-				Assert_Runs_WhenReady_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_EveryFixedStep))
-				Assert_Runs_EveryFixedStep_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_EveryFrame))
-				Assert_Runs_EveryFrame_Passed = pass;
-			else if (changedVar.Name == nameof(Assert_Runs_EveryFrameEnds))
-				Assert_Runs_EveryFrameEnds_Passed = pass;
+			if (changedVar.Name == nameof(Assert_Runs_OnCreated))
+				Assert_Runs_OnCreated_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnDestroyed))
+				Assert_Runs_OnDestroyed_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnEnabled))
+				Assert_Runs_OnEnabled_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnDisabled))
+				Assert_Runs_OnDisabled_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnReady))
+				Assert_Runs_OnReady_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnHeartbeat))
+				Assert_Runs_OnHeartbeat_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnFrameUpdate))
+				Assert_Runs_OnFrameUpdate_Passed = pass;
+			else if (changedVar.Name == nameof(Assert_Runs_OnFrameLateUpdate))
+				Assert_Runs_OnFrameLateUpdate_Passed = pass;
 			else
-				throw new ArgumentOutOfRangeException(nameof(changedVar.Name));
+				LunyLogger.LogWarning($"unhandled {changedVar}", this);
 		}
 	}
 }
