@@ -20,7 +20,7 @@ namespace LunyScript.Godot.SmokeTests
 		public override void _Ready()
 		{
 			var node = new Node();
-			node.Name = nameof(ObjectTestLunyScript) + "RuntimeCreated_(NotImplemented)";
+			node.Name = nameof(ObjectTestScript) + "RuntimeCreated_(NotImplemented)";
 			//var godotNode = new GodotNode(node);
 
 			// this causes the corresponding LunyScript to build & run
@@ -34,7 +34,7 @@ namespace LunyScript.Godot.SmokeTests
 				var rootNodes = SceneTree.CurrentScene.GetChildren();
 				foreach (var rootNode in rootNodes)
 				{
-					if (rootNode.Name == ObjectTestLunyScript.DestroyedObjectName)
+					if (rootNode.Name == ObjectTestScript.DestroyedObjectName)
 						_foundToBeDestroyedNode = true;
 				}
 			}
@@ -51,10 +51,10 @@ namespace LunyScript.Godot.SmokeTests
 			foreach (var rootNode in rootNodes)
 			{
 				var nodeName = rootNode.Name;
-				_EmptyObjectCreated = _EmptyObjectCreated || nodeName == ObjectTestLunyScript.EmptyObjectName;
-				_CubeObjectCreated = _CubeObjectCreated || nodeName == ObjectTestLunyScript.CubeObjectName;
-				_SphereObjectCreated = _SphereObjectCreated || nodeName == ObjectTestLunyScript.SphereObjectName;
-				destroyedNameFound = destroyedNameFound || nodeName == ObjectTestLunyScript.DestroyedObjectName;
+				_EmptyObjectCreated = _EmptyObjectCreated || nodeName == ObjectTestScript.EmptyObjectName;
+				_CubeObjectCreated = _CubeObjectCreated || nodeName == ObjectTestScript.CubeObjectName;
+				_SphereObjectCreated = _SphereObjectCreated || nodeName == ObjectTestScript.SphereObjectName;
+				destroyedNameFound = destroyedNameFound || nodeName == ObjectTestScript.DestroyedObjectName;
 			}
 
 			_ObjectCreatedAndDestroyed = _foundToBeDestroyedNode && destroyedNameFound == false;

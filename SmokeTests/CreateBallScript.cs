@@ -2,8 +2,8 @@ using LunyScript.Activation;
 
 namespace LunyScript.Godot.SmokeTests
 {
-	public sealed class CreateBallScript : LunyScript
+	public sealed class CreateBallScript : Script
 	{
-		public override void Build(ScriptBuildContext context) => On.Ready(Prefab.Instantiate("ball"));
+		public override void Build(ScriptContext context) => On.Ready(Prefab.Instantiate("ball"));
 	}
 }

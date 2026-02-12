@@ -23,7 +23,7 @@ namespace LunyScript.Godot.SmokeTests
 		public LifecycleTestController()
 		{
 			LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() ctor", this);
-			LunyScriptEngine.Instance.GlobalVariables.OnVariableChanged += OnVariableChanged;
+			ScriptEngine.Instance.GlobalVariables.OnVariableChanged += OnVariableChanged;
 		}
 
 		public override void _Ready() => LunyLogger.LogInfo($"{nameof(LifecycleTestController)}() _Ready", this);
