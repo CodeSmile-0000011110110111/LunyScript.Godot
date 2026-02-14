@@ -1,5 +1,3 @@
-using LunyScript.Activation;
-
 namespace LunyScript.Godot.SmokeTests
 {
 	public sealed class CreateBallScript : Script
