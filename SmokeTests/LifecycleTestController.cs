@@ -1,6 +1,7 @@
 using Godot;
 using Luny;
 using LunyScript.SmokeTests;
+using LunyScript.SmokeTests.Lifecycle;
 using System;
 
 namespace LunyScript.Godot.SmokeTests
