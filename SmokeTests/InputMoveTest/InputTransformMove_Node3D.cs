@@ -7,6 +7,7 @@ namespace LunyScript.Godot.SmokeTests.InputMoveTest
 	{
 		public override void _Process(Double delta)
 		{
+#if GODOT
 			var horizontal = Input.GetAxis("ui_left", "ui_right");
 			var vertical = Input.GetAxis("ui_up", "ui_down");
 			var moveSpeed = 4f;
@@ -19,6 +20,7 @@ namespace LunyScript.Godot.SmokeTests.InputMoveTest
 
 			if (Input.IsKeyPressed(Key.C))
 				Position += -Transform.Basis.Y * moveSpeed * (Single)delta;
+#endif
 		}
 	}
 }
